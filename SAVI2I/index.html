@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Continuous and Diverse Image-to-Image Translation via Signed Attribute Vectors</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta property="og:title" content="Continuous and Diverse Image-to-Image Translation via Signed Attribute Vectors">
+	<meta property="og:url" content="https://helenmao.github.io/SAVI2I/index.html">
+	<meta property="og:image" content="https://helenmao.github.io/SAVI2I/teaser.png">
+	<meta property="og:description" content="We propose a simple yet effective signed attribute vector (SAV) that facilitates continuous translation on diverse mapping paths across multiple domains.">
+	<meta name="description" content= "We propose a simple yet effective signed attribute vector (SAV) that facilitates continuous translation on diverse mapping paths across multiple domains.">
+	<meta name="keywords" content="SAVI2I, Deep Learning, Image-to-Image Translation, Continuous Translation, Diverse">
+	<meta name="author" content="Qi Mao">
+	<!-- jQuery -->
+	<script
+		src="https://code.jquery.com/jquery-3.1.0.min.js"
+		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+		crossorigin="anonymous"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<br>
+				<h1>Continuous and Diverse Image-to-Image Translation via Signed Attribute Vectors</h1>
+				<br>
+				<h4><a href="https://sites.google.com/view/qi-mao/">Qi&nbsp;Mao</a><sup>1</sup> &emsp; <a href="https://research.snap.com/team/hsin-ying-lee/">Hsin-Ying&nbsp;Lee</a><sup>2</sup> &emsp; <a href="https://sites.google.com/site/hytseng0509/">Hung-Yu&nbsp;Tseng</a><sup>3</sup> &emsp; <a href="https://filebox.ece.vt.edu/~jbhuang/">Jia-Bin&nbsp;Huang</a><sup>4</sup>&emsp; <a href="https://scholar.google.com/citations?user=y3YqlaUAAAAJ&hl=zh-CN">Siwei&nbsp;Ma</a><sup>1</sup>&emsp; <a href="http://faculty.ucmerced.edu/mhyang/">Ming-Hsuan&nbsp;Yang</a><sup>3</sup></h4>
+			</div>
+			<div class="col-xs-12 text-center">
+			</div>
+			<div class="col-xs-12 text-center">
+			</div>
+			<div class="col-xs-12 text-center">
+				<h4><sup>1</sup>Peking&nbsp;University&emsp; <sup>2</sup>Snap&nbsp;Research &emsp; <sup>3</sup>University&nbsp;of&nbsp;California,&nbsp;Merced&emsp;<sup>4</sup>Virginia&nbsp;Tech</h4>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="row">
+					<div class="col-xs-12 col-sm-8">
+						<img class="img-responsive" src="img/teaser.png">
+					</div>
+					<div class="col-xs-12 col-sm-4" >
+						<img class="img-responsive" src="img/teaser.gif" width="220" height="220">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<h3>Abstract</h3>
+				<p>Recent image-to-image (I2I) translation algorithms focus on learning the mapping from a source to a target domain. However, the continuous translation problem that synthesizes intermediate results between the two domains has not been well-studied in the literature.	
+					Generating a smooth sequence of intermediate results bridges the gap of two different domains, facilitating the morphing effect across domains.
+					Existing I2I approaches are limited to either intra-domain or deterministic inter-domain continuous translation.
+					In this work, we present an effective signed attribute vector, which enables continuous translation on diverse mapping paths across various domains.
+					In particular, utilizing the sign operation to encode the domain information, we introduce a unified attribute space shared by all domains, thereby allowing the interpolation on attribute vectors of different domains.
+					To enhance the visual quality of continuous translation results, we generate a trajectory between two sign-symmetrical attribute vectors and leverage the domain information of the interpolated results along the trajectory for adversarial training. 
+					We evaluate the proposed method on a wide range of I2I translation tasks.
+					Both qualitative and quantitative results demonstrate that the proposed framework generates more high-quality continuous translation results against the state-of-the-art methods.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<h3>Links</h3>
+				<a href="https://arxiv.org/abs/1804.00650">
+					<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-save-file" aria-hidden="true"></span> Paper</button>
+				</a>
+				<a href="https://github.com/HelenMao/SAVI2I">
+					<button type="button" class="btn btn-primary"><img src="img/GitHub-Mark-Light-32px.png" height="16px"> Codes</button>
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<h3>Examples</h3>
+				<a href="comparison.html"><button type="button" class="btn btn-info">More Video Comparisons <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button></a>
+				<a href="result.html"><button type="button" class="btn btn-info">More Video Results <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button></a>
+			</div>
+			<div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-0">
+				<div class="row">
+					<div class="col-xs-12 teaser-img">
+						<div class="vidcontainer">
+							<video id="glass" width="256" height="256" controls>
+								<source src="img/s2w.mp4" type="video/mp4">
+							</video>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-md-3 col-md-offset-0">
+				<div class="row">
+					<div class="col-xs-12 teaser-img">
+						<img class="img-responsive" src="img/teaser_0010.gif">
+					</div>
+					<div class="col-xs-12 teaser-img">
+						<img class="img-responsive" src="img/ours_0010.gif">
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-0">
+				<div class="row">
+					<div class="col-xs-12 teaser-img">
+						<img class="img-responsive" src="img/teaser_0110.gif">
+					</div>
+					<div class="col-xs-12 teaser-img">
+						<img class="img-responsive" src="img/ours_0110.gif">
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-md-3 col-md-offset-0">
+				<div class="row">
+					<div class="col-xs-12 teaser-img">
+						<img class="img-responsive" src="img/teaser_0126.gif">
+					</div>
+					<div class="col-xs-12 teaser-img">
+						<img class="img-responsive" src="img/ours_0126.gif">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<h3>BibTeX</h3>
+				<p>If you use our code or data, please cite:</p>
+				<pre>
+    @article{SAVI2I,
+      author       = "Mao, Qi and Lee, Hsin-Ying and Tseng, Hung-Yu and Huang, Jia-Bin and Ma, Siwei and Yang, Ming-Hsuan",
+      title        = "Continuous and Diverse Image-to-Image Translation via Signed Attribute Vectors",
+      journal    = "arXiv preprint",
+      year         = "2020"
+    }
+</pre>
+			</div>
+		</div>
+	</div>
+
+	
+	
+	<style type="text/css">
+.container {
+	background-color: #FBFBFC;
+}
+.teaser-img {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.img-responsive {
+	margin: auto;
+}
+	</style>
+</body>
+</html>

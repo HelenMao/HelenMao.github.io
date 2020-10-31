@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DeepMVS: Learning Multi-View Stereopsis - Comparisons</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta property="og:title" content="DeepMVS: Learning Multi-View Stereopsis - Comparisons">
+	<meta property="og:url" content="https://phuang17.github.io/DeepMVS/comparison.html">
+	<meta property="og:image" content="https://phuang17.github.io/DeepMVS/img/overview-cropped.png">
+	<meta property="og:description" content="DeepMVS is a Deep Convolutional Neural Network which learns to estimate pixel-wise disparity maps from a sequence of an arbitrary number of unordered images with the camera poses already known or estimated.">
+	<meta name="description" content="DeepMVS is a Deep Convolutional Neural Network which learns to estimate pixel-wise disparity maps from a sequence of an arbitrary number of unordered images with the camera poses already known or estimated.">
+	<meta name="keywords" content="DeepMVS, Po-Han Huang, Jia-Bin Huang, Johannes Kopf, Kevin Matzen, Narendra Ahuja, Deep Learning, Multi-View Stereo, Learning Multi-View Stereopsis, Computer Vision, MVS-Synth">
+	<meta name="author" content="Po-Han Huang">
+	<!-- jQuery -->
+	<script
+		src="https://code.jquery.com/jquery-3.1.0.min.js"
+		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+		crossorigin="anonymous"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<br>
+				<h1>DeepMVS: Learning Multi-View Stereopsis</h1>
+				<br>
+				<h4><a href="https://phuang17.github.io/">Po-Han&nbsp;Huang</a><sup>1</sup> &emsp; <a href="http://www.kmatzen.com/">Kevin&nbsp;Matzen</a><sup>2</sup> &emsp; <a href="http://johanneskopf.de/">Johannes&nbsp;Kopf</a><sup>2</sup> &emsp; <a href="http://vision.ai.illinois.edu/ahuja.html">Narendra&nbsp;Ahuja</a><sup>1</sup> &emsp; <a href="https://filebox.ece.vt.edu/~jbhuang/">Jia-Bin&nbsp;Huang</a><sup>3</sup></h4>
+			</div>
+			<div class="col-xs-12 text-center">
+				<h4><sup>1</sup>University&nbsp;of&nbsp;Illinois, Urbana&nbsp;Champaign &emsp; <sup>2</sup>Facebook &emsp; <sup>3</sup>Virginia&nbsp;Tech</h4>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<a href="index.html">
+					<button type="button" class="btn btn-link">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Back to DeepMVS Project Page
+					</button>
+				</a>
+				<br>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<h3>Comparisons with Conventional MVS Algorithms</h3>
+				<p>Below are the comparisons between our approach and other conventional multi-view stereo algorithms evaluated on <a href="https://www.eth3d.net/">ETH3D Dataset</a>.</p>
+				<table class="table table-hover comparison-table">
+					<thead>
+						<tr>
+							<th>Reference</td>
+							<th>Ground Truth</td>
+							<th><a href="https://www.di.ens.fr/pmvs/">PMVS</a></td>
+							<th><a href="https://www.gcc.tu-darmstadt.de/home/proj/mve/">MVE</a></td>
+							<th><a href="https://colmap.github.io/">COLMAP</a> (filtered)</td>
+							<th><a href="https://colmap.github.io/">COLMAP</a> (unfiltered)</td>
+							<th>Our Result</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0000/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0000/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0000/pmvs_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0000/mve.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0000/colmap_GF.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0000/colmap_GU.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0000/ours.png"></td>
+						</tr>
+						<tr>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0002/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0002/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0002/pmvs_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0002/mve.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0002/colmap_GF.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0002/colmap_GU.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0002/ours.png"></td>
+						</tr>
+						<tr>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0010/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0010/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0010/pmvs_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0010/mve.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0010/colmap_GF.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0010/colmap_GU.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0010/ours.png"></td>
+						</tr>
+						<tr>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0015/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0015/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0015/pmvs_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0015/mve.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0015/colmap_GF.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0015/colmap_GU.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0015/ours.png"></td>
+						</tr>
+						<tr>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0019/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0019/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0019/pmvs_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0019/mve.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0019/colmap_GF.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0019/colmap_GU.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0019/ours.png"></td>
+						</tr>
+						<tr>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0025/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0025/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0025/pmvs_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0025/mve.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0025/colmap_GF.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0025/colmap_GU.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0025/ours.png"></td>
+						</tr>
+						<tr>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0027/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0027/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0027/pmvs_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0027/mve.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0027/colmap_GF.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0027/colmap_GU.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0027/ours.png"></td>
+						</tr>
+						<tr>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0036/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0036/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0036/pmvs_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0036/mve.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0036/colmap_GF.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0036/colmap_GU.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0036/ours.png"></td>
+						</tr>
+						<tr>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0037/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0037/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0037/pmvs_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0037/mve.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0037/colmap_GF.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0037/colmap_GU.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0037/ours.png"></td>
+						</tr>
+						<tr>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0049/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0049/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0049/pmvs_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0049/mve.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0049/colmap_GF.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0049/colmap_GU.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0049/ours.png"></td>
+						</tr>
+						<tr>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0071/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0071/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0071/pmvs_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0071/mve.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0071/colmap_GF.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0071/colmap_GU.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0071/ours.png"></td>
+						</tr>
+						<tr>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0087/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0087/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0087/pmvs_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0087/mve.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0087/colmap_GF.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0087/colmap_GU.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0087/ours.png"></td>
+						</tr>
+						<tr>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0110/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0110/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0110/pmvs_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0110/mve.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0110/colmap_GF.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0110/colmap_GU.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0110/ours.png"></td>
+						</tr>
+						<tr>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0126/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0126/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0126/pmvs_depth.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0126/mve.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0126/colmap_GF.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0126/colmap_GU.png"></td>
+							<td><img class="img-responsive" src="img/ETH3D_comparisons/0126/ours.png"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-xs-12 text-left">
+				<h3>Comparisons with <a href="https://lmb.informatik.uni-freiburg.de/people/ummenhof/depthmotionnet/">DeMoN</a> on Image Pairs</h3>
+				<p>Below are our results on <a href="https://lmb.informatik.uni-freiburg.de/people/ummenhof/depthmotionnet/">DeMoN</a>'s testing dataset, which consists of image pairs. Our algorithm is designed for sequences with more images, but is still capable of generating disparity maps for image pairs.</p>
+				<table class="table table-hover comparison-table">
+					<thead>
+						<tr>
+							<th>Image1</td>
+							<th>Image2</td>
+							<th>Ground Truth</td>
+							<th><a href="https://lmb.informatik.uni-freiburg.de/people/ummenhof/depthmotionnet/">DeMoN</a></td>
+							<th>Our Result</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0000/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0000/gt_img2.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0000/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0000/demon.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0000/ours.png"></td>
+						</tr>
+						<tr>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0009/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0009/gt_img2.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0009/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0009/demon.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0009/ours.png"></td>
+						</tr>
+						<tr>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0049/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0049/gt_img2.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0049/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0049/demon.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0049/ours.png"></td>
+						</tr>
+						<tr>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0254/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0254/gt_img2.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0254/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0254/demon.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0254/ours.png"></td>
+						</tr>
+						<tr>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0301/gt_img.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0301/gt_img2.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0301/gt_depth.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0301/demon.png"></td>
+							<td><img class="img-responsive" src="img/DeMoN_comparisons/0301/ours.png"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	
+	
+	<style type="text/css">
+.container {
+	background-color: #FBFBFC;
+}
+.teaser-img {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.img-responsive {
+	margin: auto;
+}
+.comparison-table {
+	table-layout: fixed;
+    word-wrap: break-word;
+}
+.comparison-table th {
+	text-align: center;
+}
+	</style>
+</body>
+</html>

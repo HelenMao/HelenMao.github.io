@@ -79,48 +79,52 @@
 				<a href="comparison.html"><button type="button" class="btn btn-info">More Video Comparisons <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button></a>
 				<a href="result.html"><button type="button" class="btn btn-info">More Video Results <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button></a>
 			</div>
-			<div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-0">
-				<div class="row">
-					<div class="col-xs-12 teaser-img">
-						<div class="vidcontainer">
-							<video id="glass" width="256" height="256" controls>
-								<source src="img/s2w.mp4" type="video/mp4">
-							</video>
-						</div>
-					</div>
-				</div>
+			<table class="table table-hover comparison-table">
+				<thead>
+					<tr>
+						<th>Summer2Winter</td>
+						<th>Photo2Artwork</td>
+						<th>Male2Female</td>
+						<th>Cat2Dog</td>
+					</tr>
+				</thead>
+				<tbody>
+					
+								<tr>
+									<td><div class="vidcontainer">
+											<video id="glass" width="256" height="256" controls loop>
+												<source src="img/s2w.mp4" type="video/mp4">
+											</video>
+										</div>
+									</td>
+									<td><div class="vidcontainer">
+											<video id="glass" width="256" height="256" controls loop>
+												<source src="img/p2a.mp4" type="video/mp4">
+											</video>
+										</div>
+									</td>
+									<td><div class="vidcontainer">
+											<video id="glass" width="256" height="256" controls loop>
+												<source src="img/m2f.mp4" type="video/mp4">
+											</video>
+										</div>
+									</td>
+									<td><div class="vidcontainer">
+											<video id="glass" width="256" height="256" controls loop>
+												<source src="img/c2d.mp4" type="video/mp4">
+											</video>
+										</div>
+									</td>
+								</tr>
+
+						</tbody>
+				</table>
 			</div>
-			<div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-md-3 col-md-offset-0">
-				<div class="row">
-					<div class="col-xs-12 teaser-img">
-						<img class="img-responsive" src="img/teaser_0010.gif">
-					</div>
-					<div class="col-xs-12 teaser-img">
-						<img class="img-responsive" src="img/ours_0010.gif">
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-0">
-				<div class="row">
-					<div class="col-xs-12 teaser-img">
-						<img class="img-responsive" src="img/teaser_0110.gif">
-					</div>
-					<div class="col-xs-12 teaser-img">
-						<img class="img-responsive" src="img/ours_0110.gif">
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0 col-md-3 col-md-offset-0">
-				<div class="row">
-					<div class="col-xs-12 teaser-img">
-						<img class="img-responsive" src="img/teaser_0126.gif">
-					</div>
-					<div class="col-xs-12 teaser-img">
-						<img class="img-responsive" src="img/ours_0126.gif">
-					</div>
-				</div>
-			</div>
-		</div>
+			
+			
+			
+			
+	
 		<div class="row">
 			<div class="col-xs-12 text-left">
 				<h3>BibTeX</h3>
@@ -135,6 +139,13 @@
 </pre>
 			</div>
 		</div>
+		<div class="row">
+				<div class="col-xs-12 text-right">
+					<h5>Acknowledgements: page template comes from <a href="https://phuang17.github.io/DeepMVS/index.html">Po-Han&nbsp;Huang</a> </h5>
+				</div>
+	
+	
+			</div>
 	</div>
 
 	
@@ -149,6 +160,24 @@
 }
 .img-responsive {
 	margin: auto;
+}
+.vidcontainer{
+    width: 256px;
+    height: 256px;
+    overflow:hidden;
+}
+#glass{
+    margin-left: -5px;
+    margin-right: -5px;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+.comparison-table {
+	table-layout: fixed;
+    word-wrap: break-word;
+}
+.comparison-table th {
+	text-align: center;
 }
 	</style>
 </body>

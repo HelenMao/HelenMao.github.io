@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Continuous and Diverse Image-to-Image Translation via Signed Attribute Vectors</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta property="og:title" content="Continuous and Diverse Image-to-Image Translation via Signed Attribute Vectors">
+	<meta property="og:url" content="https://helenmao.github.io/SAVI2I/index.html">
+	<meta property="og:image" content="https://helenmao.github.io/SAVI2I/teaser.png">
+	<meta property="og:description" content="We propose a simple yet effective signed attribute vector (SAV) that facilitates continuous translation on diverse mapping paths across multiple domains.">
+	<meta name="description" content= "We propose a simple yet effective signed attribute vector (SAV) that facilitates continuous translation on diverse mapping paths across multiple domains.">
+	<meta name="keywords" content="SAVI2I, Deep Learning, Image-to-Image Translation, Continuous Translation, Diverse">
+	<meta name="author" content="Qi Mao">
+	<!-- jQuery -->
+	<script
+		src="https://code.jquery.com/jquery-3.1.0.min.js"
+		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+		crossorigin="anonymous"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<br>
+				<h1>Continuous and Diverse Image-to-Image Translation via Signed Attribute Vectors</h1>
+				<br>
+				<h4><a href="https://sites.google.com/view/qi-mao/">Qi&nbsp;Mao</a><sup>1</sup> &emsp; <a href="https://research.snap.com/team/hsin-ying-lee/">Hsin-Ying&nbsp;Lee</a><sup>2</sup> &emsp; <a href="https://sites.google.com/site/hytseng0509/">Hung-Yu&nbsp;Tseng</a><sup>3</sup> &emsp; <a href="https://filebox.ece.vt.edu/~jbhuang/">Jia-Bin&nbsp;Huang</a><sup>4</sup>&emsp; <a href="https://scholar.google.com/citations?user=y3YqlaUAAAAJ&hl=zh-CN">Siwei&nbsp;Ma</a><sup>1</sup>&emsp; <a href="http://faculty.ucmerced.edu/mhyang/">Ming-Hsuan&nbsp;Yang</a><sup>3</sup></h4>
+			</div>
+			<div class="col-xs-12 text-center">
+			</div>
+			<div class="col-xs-12 text-center">
+			</div>
+			<div class="col-xs-12 text-center">
+				<h4><sup>1</sup>Peking&nbsp;University&emsp; <sup>2</sup>Snap&nbsp;Research &emsp; <sup>3</sup>University&nbsp;of&nbsp;California,&nbsp;Merced&emsp;<sup>4</sup>Virginia&nbsp;Tech</h4>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<a href="index.html">
+					<button type="button" class="btn btn-link">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>  Back to SAVI2I Project Page
+					</button>
+				</a>
+				<br>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 text-left">
+                    <h2>Reference-guided Results</h2>
+                    <p>We show diverse continuous translation results with different reference images.</p>
+                    <h3>Results on Summer2winter</h3>
+                    <div class="row">
+                            <div class="col-xs-12">
+                                <div class="row">
+                                    <div class="col-xs-12 text-center">
+                                        <video width="1152" height="384" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+                                          <source src="img/results/s2w.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>Results on Winter2summer</h3>
+                        <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-center">
+                                            <video width="1152" height="384" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+                                              <source src="img/results/w2s.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>Results on Photo2artwork</h3>
+                            <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="row">
+                                            <div class="col-xs-12 text-center">
+                                                <video width="1152" height="384" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+                                                  <source src="img/results/p2a.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3>Results on Male2female</h3>
+                                <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="row">
+                                                <div class="col-xs-12 text-center">
+                                                    <video width="1152" height="384" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+                                                      <source src="img/results/m2f.mp4" type="video/mp4">
+                                                    </video>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3>Results on Cat2dog</h3>
+                                    <div class="row">
+                                            <div class="col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-xs-12 text-center">
+                                                        <video width="1152" height="384" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+                                                          <source src="img/results/c2d.mp4" type="video/mp4">
+                                                        </video>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                        <h3>Results on Dog2cat</h3>
+                        <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-center">
+                                            <video width="1152" height="384" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+                                              <source src="img/results/d2c.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <h3>Results on Cat2wildlife</h3>
+                        <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-center">
+                                            <video width="1152" height="384" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+                                              <source src="img/results/c2w.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                <h2>Latent-guided Results</h2>
+                <p>We show diverse continuous translation results with different latent signed attribute vectors.</p>
+                <h3>Results on Female2male</h3>
+                <div class="row">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-xs-12 text-center">
+                                    <video width="1152" height="384" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+                                      <source src="img/results/f2m.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Results on Widlife2dog</h3>
+                    <div class="row">
+                            <div class="col-xs-12">
+                                <div class="row">
+                                    <div class="col-xs-12 text-center">
+                                        <video width="1152" height="384" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+                                          <source src="img/results/w2d.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>Results on Widlife2cat</h3>
+                        <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="row">
+                                        <div class="col-xs-12 text-center">
+                                            <video width="1152" height="384" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+                                              <source src="img/results/w2c.mp4" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+			</div>
+                
+
+		</div>
+	</div>
+
+	<style type="text/css">
+.container {
+	background-color: #FBFBFC;
+}
+.teaser-img {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.img-responsive {
+	margin: auto;
+}
+.comparison-table {
+	table-layout: fixed;
+		word-wrap: break-word;
+}
+.comparison-table th {
+	text-align: center;
+}
+	</style>
+
+	<script type="text/javascript">
+	var currentViewList = ["gt_img", "gt_depth", "demon_median", "demon_best_L1", "pmvs_depth", "mve", "colmap_GF", "colmap_GU", "ours"];
+	var currentView = "ours";
+
+	function ChangeDataset(){
+		var dataset = document.getElementById("dataset-select").value.split(" ")[0];
+		var frame_total = parseInt(document.getElementById("dataset-select").value.split(" ")[1]);
+		document.getElementById("frame-total").innerHTML = frame_total;
+		document.getElementById("frame-idx-input").value = 1;
+		document.getElementById("frame-idx-input").max = frame_total;
+		ChangeFrame();
+	}
+
+	function ChangeFrame(){
+		var dataset = document.getElementById("dataset-select").value.split(" ")[0];
+		var frame_idx = parseInt(document.getElementById("frame-idx-input").value);
+		document.getElementById("frame-idx").innerHTML = ("00" + frame_idx).slice(-2);
+		document.getElementById("showoff-img").src = "img/showoff/" + dataset + "/" + ("0000" + (frame_idx - 1)).slice(-4) + "/" + currentView + ".png";
+	}
+
+	function NextFrame(){
+		var frame_total = parseInt(document.getElementById("dataset-select").value.split(" ")[1]);
+		var frame_idx = parseInt(document.getElementById("frame-idx-input").value);
+		if(frame_idx < frame_total){
+			document.getElementById("frame-idx-input").value = frame_idx + 1;
+			ChangeFrame();
+		}
+	}
+
+	function PrevFrame(){
+		var frame_idx = parseInt(document.getElementById("frame-idx-input").value);
+		if(frame_idx > 1){
+			document.getElementById("frame-idx-input").value = frame_idx - 1;
+			ChangeFrame();
+		}
+	}
+
+	function ChangeCurrentView(idx){
+		var li_list = document.getElementById("current-view-ul").children;
+		console.log(idx);
+		console.log(li_list);
+		for(i = 0; i < li_list.length; i++){
+			li_list[i].className = "";
+		}
+		li_list[idx].className = "active";
+		currentView = currentViewList[idx];
+		ChangeFrame();
+	}
+
+	</script>
+
+
+</body>
+</html>

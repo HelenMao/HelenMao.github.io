@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Continuous and Diverse Image-to-Image Translation via Signed Attribute Vectors</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta property="og:title" content="Continuous and Diverse Image-to-Image Translation via Signed Attribute Vectors">
+	<meta property="og:url" content="https://helenmao.github.io/SAVI2I/index.html">
+	<meta property="og:image" content="https://helenmao.github.io/SAVI2I/teaser.png">
+	<meta property="og:description" content="We propose a simple yet effective signed attribute vector (SAV) that facilitates continuous translation on diverse mapping paths across multiple domains.">
+	<meta name="description" content= "We propose a simple yet effective signed attribute vector (SAV) that facilitates continuous translation on diverse mapping paths across multiple domains.">
+	<meta name="keywords" content="SAVI2I, Deep Learning, Image-to-Image Translation, Continuous Translation, Diverse">
+	<meta name="author" content="Qi Mao">
+	<!-- jQuery -->
+	<script
+		src="https://code.jquery.com/jquery-3.1.0.min.js"
+		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+		crossorigin="anonymous"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<br>
+				<h1>Continuous and Diverse Image-to-Image Translation via Signed Attribute Vectors</h1>
+				<br>
+				<h4><a href="https://sites.google.com/view/qi-mao/">Qi&nbsp;Mao</a><sup>1</sup> &emsp; <a href="https://research.snap.com/team/hsin-ying-lee/">Hsin-Ying&nbsp;Lee</a><sup>2</sup> &emsp; <a href="https://sites.google.com/site/hytseng0509/">Hung-Yu&nbsp;Tseng</a><sup>3</sup> &emsp; <a href="https://filebox.ece.vt.edu/~jbhuang/">Jia-Bin&nbsp;Huang</a><sup>4</sup>&emsp; <a href="https://scholar.google.com/citations?user=y3YqlaUAAAAJ&hl=zh-CN">Siwei&nbsp;Ma</a><sup>1</sup>&emsp; <a href="http://faculty.ucmerced.edu/mhyang/">Ming-Hsuan&nbsp;Yang</a><sup>3</sup></h4>
+			</div>
+			<div class="col-xs-12 text-center">
+			</div>
+			<div class="col-xs-12 text-center">
+			</div>
+			<div class="col-xs-12 text-center">
+				<h4><sup>1</sup>Peking&nbsp;University&emsp; <sup>2</sup>Snap&nbsp;Research &emsp; <sup>3</sup>University&nbsp;of&nbsp;California,&nbsp;Merced&emsp;<sup>4</sup>Virginia&nbsp;Tech</h4>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<a href="index.html">
+					<button type="button" class="btn btn-link">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Back to SAVI2I Project Page
+					</button>
+				</a>
+				<br>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<h3>Reference-guided Comparisons</h3>
+				<p>Below are the comparisons between our approach and other I2I and Face-attribtue editing algorithms evaluated on Male <-> Female Translations.</p>
+				<table class="table table-hover comparison-table">
+					<thead>
+						<tr>
+							<th>Input</td>
+							<th>Reference</td>
+							<th><a href="https://github.com/clovaai/stargan-v2">StarGAN-v2</a></td>
+							<th><a href="https://github.com/yingcong/HomoInterpGAN">HomoInterpGAN</a></td>
+							<th><a href="https://github.com/NVlabs/FUNIT">FUNIT</a> </td>
+							<th>Our Result</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><img id="input" class="img-responsive" src="img/comparisons/ref/input/test1/input.png"></td>
+							<td><img id="input" class="img-responsive" src="img/comparisons/ref/input/test1/reference.png"></td>
+							<td>
+								<div class="vidcontainer">
+									<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+										<source src="img/comparisons/ref/starGAN-v2/test1.mp4"  type="video/mp4">
+									</video>
+								</div>
+							</td>
+							<td>
+								<div class="vidcontainer">
+									<video id="glass" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+										<source src="img/comparisons/ref/Homo/test1.mp4" type="video/mp4">
+									</video>
+								</div>
+							</td>
+							<td>
+								<div class="vidcontainer">
+									<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+										<source src="img/comparisons/ref/FUNIT/test1.mp4" type="video/mp4">
+									</video>
+								</div>
+							</td>
+							<td>
+								<div class="vidcontainer">
+									<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+										<source src="img/comparisons/ref/ours/test1.mp4" type="video/mp4">
+									</video>
+								</div>
+							</td>
+						
+						</tr>
+						<tr>
+								<td><img class="img-responsive" src="img/comparisons/ref/input/test3/input.png"></td>
+								<td><img class="img-responsive" src="img/comparisons/ref/input/test3/reference.png"></td>
+								<td>
+									<div class="vidcontainer">
+										<video id="glass" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+											<source src="img/comparisons/ref/starGAN-v2/test3.mp4" type="video/mp4">
+										</video>
+									</div>
+								</td>
+								<td>
+									<div class="vidcontainer">
+										<video id="glass" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+											<source src="img/comparisons/ref/Homo/test3.mp4" type="video/mp4">
+										</video>
+									</div>
+								</td>
+								<td>
+									<div class="vidcontainer">
+										<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+											<source src="img/comparisons/ref/FUNIT/test3.mp4" type="video/mp4">
+										</video>
+									</div>
+								</td>
+								<td>
+									<div class="vidcontainer">
+										<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+											<source src="img/comparisons/ref/ours/test3.mp4" type="video/mp4">
+										</video>
+									</div>
+								</td>
+							
+							</tr>
+							<tr>
+									<td><img class="img-responsive" src="img/comparisons/ref/input/test4/input.png"></td>
+									<td><img class="img-responsive" src="img/comparisons/ref/input/test4/reference.png"></td>
+									<td>
+										<div class="vidcontainer">
+											<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+												<source src="img/comparisons/ref/starGAN-v2/test4.mp4" type="video/mp4">
+											</video>
+										</div>
+									</td>
+									<td>
+										<div class="vidcontainer">
+											<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+												<source src="img/comparisons/ref/Homo/test4.mp4" type="video/mp4">
+											</video>
+										</div>
+									</td>
+									<td>
+										<div class="vidcontainer">
+											<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+												<source src="img/comparisons/ref/FUNIT/test4.mp4" type="video/mp4">
+											</video>
+										</div>
+									</td>
+									<td>
+										<div class="vidcontainer">
+											<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+												<source src="img/comparisons/ref/ours/test4.mp4" type="video/mp4">
+											</video>
+										</div>
+									</td>
+								
+								</tr>
+								<tr>
+										<td><img class="img-responsive" src="img/comparisons/ref/input/test6/input.png"></td>
+										<td><img class="img-responsive" src="img/comparisons/ref/input/test6/reference.png"></td>
+										<td>
+											<div class="vidcontainer">
+												<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+													<source src="img/comparisons/ref/starGAN-v2/test6.mp4" type="video/mp4">
+												</video>
+											</div>
+										</td>
+										<td>
+											<div class="vidcontainer">
+												<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+													<source src="img/comparisons/ref/Homo/test6.mp4" type="video/mp4">
+												</video>
+											</div>
+										</td>
+										<td>
+											<div class="vidcontainer">
+												<video id="glass" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+													<source src="img/comparisons/ref/FUNIT/test6.mp4" type="video/mp4">
+												</video>
+											</div>
+										</td>
+										<td>
+											<div class="vidcontainer">
+												<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+													<source src="img/comparisons/ref/ours/test6.mp4" type="video/mp4">
+												</video>
+											</div>
+										</td>
+									
+									</tr>
+									<tr>
+											<td><img class="img-responsive" src="img/comparisons/ref/input/test7/input.png"></td>
+											<td><img class="img-responsive" src="img/comparisons/ref/input/test7/reference.png"></td>
+											<td>
+												<div class="vidcontainer">
+													<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+														<source src="img/comparisons/ref/starGAN-v2/test7.mp4" type="video/mp4">
+													</video>
+												</div>
+											</td>
+											<td>
+												<div class="vidcontainer">
+													<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+														<source src="img/comparisons/ref/Homo/test7.mp4" type="video/mp4">
+													</video>
+												</div>
+											</td>
+											<td>
+												<div class="vidcontainer">
+													<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+														<source src="img/comparisons/ref/FUNIT/test7.mp4" type="video/mp4">
+													</video>
+												</div>
+											</td>
+											<td>
+												<div class="vidcontainer">
+													<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+														<source src="img/comparisons/ref/ours/test7.mp4" type="video/mp4">
+													</video>
+												</div>
+											</td>
+										
+										</tr>
+										<tr>
+												<td><img class="img-responsive" src="img/comparisons/ref/input/test9/input.png"></td>
+												<td><img class="img-responsive" src="img/comparisons/ref/input/test9/reference.png"></td>
+												<td>
+													<div class="vidcontainer">
+														<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+															<source src="img/comparisons/ref/starGAN-v2/test9.mp4" type="video/mp4">
+														</video>
+													</div>
+												</td>
+												<td>
+													<div class="vidcontainer">
+														<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+															<source src="img/comparisons/ref/Homo/test9.mp4" type="video/mp4">
+														</video>
+													</div>
+												</td>
+												<td>
+													<div class="vidcontainer">
+														<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+															<source src="img/comparisons/ref/FUNIT/test9.mp4" type="video/mp4">
+														</video>
+													</div>
+												</td>
+												<td>
+													<div class="vidcontainer">
+														<video id="glass" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+															<source src="img/comparisons/ref/ours/test9.mp4" type="video/mp4">
+														</video>
+													</div>
+												</td>
+											
+											</tr>
+						
+						
+					
+					</tbody>
+				</table>
+			</div>
+			<div class="col-xs-12 text-left">
+					<h3>Latent-guided Comparisons</h3>
+					<p>Below are the comparisons between our approach and other I2I and Face-attribtue editing algorithms evaluated on Male <-> Female Translations.</p>
+					<table class="table table-hover comparison-table">
+						<thead>
+							<tr>
+								<th>Input</td>
+								<th><a href="https://github.com/clovaai/stargan-v2">StarGAN-v2</a></td>
+								<th><a href="https://github.com/ETHRuiGong/DLOW">DLOW</a></td>
+								<th><a href="https://github.com/willylulu/RelGAN">RelGAN</a> </td>
+								<th><a href="https://github.com/facebookresearch/FaderNetworks">Fader Networks</a> </td>
+								<th>Our Result</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><img id="input" class="img-responsive" src="img/comparisons/rdm/input/test2/input.png"></td>
+								<td>
+									<div class="vidcontainer">
+										<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+											<source src="img/comparisons/rdm/starGAN-v2/test2.mp4"  type="video/mp4">
+										</video>
+									</div>
+								</td>
+								<td>
+									<div class="vidcontainer">
+										<video id="glass" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+											<source src="img/comparisons/rdm/DLOW/test2.mp4" type="video/mp4">
+										</video>
+									</div>
+								</td>
+								<td>
+									<div class="vidcontainer">
+										<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+											<source src="img/comparisons/rdm/RelGAN/test2.mp4" type="video/mp4">
+										</video>
+									</div>
+								</td>
+								<td>
+									<div class="vidcontainer">
+										<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+											<source src="img/comparisons/rdm/FaderNet/test2.mp4" type="video/mp4">
+										</video>
+									</div>
+								</td>
+								<td>
+									<div class="vidcontainer">
+										<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+											<source src="img/comparisons/rdm/ours/test2.mp4" type="video/mp4">
+										</video>
+									</div>
+								</td>
+							
+							</tr>
+							<tr>
+									<td><img id="input" class="img-responsive" src="img/comparisons/rdm/input/test4/input.png"></td>
+									<td>
+										<div class="vidcontainer">
+											<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+												<source src="img/comparisons/rdm/starGAN-v2/test4.mp4"  type="video/mp4">
+											</video>
+										</div>
+									</td>
+									<td>
+										<div class="vidcontainer">
+											<video id="glass" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+												<source src="img/comparisons/rdm/DLOW/test4.mp4" type="video/mp4">
+											</video>
+										</div>
+									</td>
+									<td>
+										<div class="vidcontainer">
+											<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+												<source src="img/comparisons/rdm/RelGAN/test4.mp4" type="video/mp4">
+											</video>
+										</div>
+									</td>
+									<td>
+										<div class="vidcontainer">
+											<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+												<source src="img/comparisons/rdm/FaderNet/test4.mp4" type="video/mp4">
+											</video>
+										</div>
+									</td>
+									<td>
+											<div class="vidcontainer">
+												<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+													<source src="img/comparisons/rdm/ours/test4.mp4" type="video/mp4">
+												</video>
+											</div>
+										</td>
+								
+								</tr>
+								<tr>
+										<td><img id="input" class="img-responsive" src="img/comparisons/rdm/input/test5/input.png"></td>
+										<td>
+											<div class="vidcontainer">
+												<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+													<source src="img/comparisons/rdm/starGAN-v2/test5.mp4"  type="video/mp4">
+												</video>
+											</div>
+										</td>
+										<td>
+											<div class="vidcontainer">
+												<video id="glass" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+													<source src="img/comparisons/rdm/DLOW/test5.mp4" type="video/mp4">
+												</video>
+											</div>
+										</td>
+										<td>
+											<div class="vidcontainer">
+												<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+													<source src="img/comparisons/rdm/RelGAN/test5.mp4" type="video/mp4">
+												</video>
+											</div>
+										</td>
+										<td>
+											<div class="vidcontainer">
+												<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+													<source src="img/comparisons/rdm/FaderNet/test5.mp4" type="video/mp4">
+												</video>
+											</div>
+										</td>
+										<td>
+												<div class="vidcontainer">
+													<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+														<source src="img/comparisons/rdm/ours/test5.mp4" type="video/mp4">
+													</video>
+												</div>
+											</td>
+									
+									</tr>
+									<tr>
+											<td><img id="input" class="img-responsive" src="img/comparisons/rdm/input/test7/input.png"></td>
+											<td>
+												<div class="vidcontainer">
+													<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+														<source src="img/comparisons/rdm/starGAN-v2/test7.mp4"  type="video/mp4">
+													</video>
+												</div>
+											</td>
+											<td>
+												<div class="vidcontainer">
+													<video id="glass" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+														<source src="img/comparisons/rdm/DLOW/test7.mp4" type="video/mp4">
+													</video>
+												</div>
+											</td>
+											<td>
+												<div class="vidcontainer">
+													<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+														<source src="img/comparisons/rdm/RelGAN/test7.mp4" type="video/mp4">
+													</video>
+												</div>
+											</td>
+											<td>
+												<div class="vidcontainer">
+													<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+														<source src="img/comparisons/rdm/FaderNet/test7.mp4" type="video/mp4">
+													</video>
+												</div>
+											</td>
+											<td>
+													<div class="vidcontainer">
+														<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+															<source src="img/comparisons/rdm/ours/test7.mp4" type="video/mp4">
+														</video>
+													</div>
+												</td>
+										
+										</tr>
+										<tr>
+												<td><img id="input" class="img-responsive" src="img/comparisons/rdm/input/test8/input.png"></td>
+												<td>
+													<div class="vidcontainer">
+														<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+															<source src="img/comparisons/rdm/starGAN-v2/test8.mp4"  type="video/mp4">
+														</video>
+													</div>
+												</td>
+												<td>
+													<div class="vidcontainer">
+														<video id="glass" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+															<source src="img/comparisons/rdm/DLOW/test8.mp4" type="video/mp4">
+														</video>
+													</div>
+												</td>
+												<td>
+													<div class="vidcontainer">
+														<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+															<source src="img/comparisons/rdm/RelGAN/test8.mp4" type="video/mp4">
+														</video>
+													</div>
+												</td>
+												<td>
+													<div class="vidcontainer">
+														<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+															<source src="img/comparisons/rdm/FaderNet/test8.mp4" type="video/mp4">
+														</video>
+													</div>
+												</td>
+												<td>
+														<div class="vidcontainer">
+															<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+																<source src="img/comparisons/rdm/ours/test8.mp4" type="video/mp4">
+															</video>
+														</div>
+													</td>
+											
+											</tr>
+											<tr>
+													<td><img id="input" class="img-responsive" src="img/comparisons/rdm/input/test10/input.png"></td>
+													<td>
+														<div class="vidcontainer">
+															<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+																<source src="img/comparisons/rdm/starGAN-v2/test10.mp4"  type="video/mp4">
+															</video>
+														</div>
+													</td>
+													<td>
+														<div class="vidcontainer">
+															<video id="glass" autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+																<source src="img/comparisons/rdm/DLOW/test10.mp4" type="video/mp4">
+															</video>
+														</div>
+													</td>
+													<td>
+														<div class="vidcontainer">
+															<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+																<source src="img/comparisons/rdm/RelGAN/test10.mp4" type="video/mp4">
+															</video>
+														</div>
+													</td>
+													<td>
+														<div class="vidcontainer">
+															<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+																<source src="img/comparisons/rdm/FaderNet/test10.mp4" type="video/mp4">
+															</video>
+														</div>
+													</td>
+													<td>
+															<div class="vidcontainer">
+																<video id="glass"  autoplay="autoPlay" onended="this.currentTime=0; this.play()">
+																	<source src="img/comparisons/rdm/ours/test10.mp4" type="video/mp4">
+																</video>
+															</div>
+														</td>
+												
+												</tr>
+							
+							
+						
+						</tbody>
+					</table>
+				</div>
+		</div>
+	</div>
+
+	
+	
+	<style type="text/css">
+.container {
+	background-color: #FBFBFC;
+}
+.teaser-img {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.img-responsive {
+	margin: auto;
+}
+#input{
+	width: 175px;
+    height: 175px;
+}
+.comparison-table {
+	table-layout: fixed;
+    word-wrap: break-word;
+}
+.comparison-table th {
+	text-align: center;
+}
+.vidcontainer{
+    overflow:hidden;
+}
+#glass{
+	width: 175px;
+    height: 175px;
+	
+}
+.comparison-table {
+	table-layout: fixed;
+    word-wrap: break-word;
+}
+.comparison-table th {
+	text-align: center;
+}
+
+	</style>
+</body>
+</html>

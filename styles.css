@@ -1,15 +1,15 @@
 :root {
-  --bg: #fff6fb;
-  --bg-strong: #fff0f7;
-  --surface: rgba(255, 255, 255, 0.78);
-  --surface-strong: rgba(255, 255, 255, 0.9);
-  --text: #2a1730;
-  --muted: #725e79;
-  --line: rgba(42, 23, 48, 0.12);
-  --accent: #c74387;
-  --accent-soft: #ffe5f2;
-  --gold: #b86a8f;
-  --shadow: 0 16px 42px rgba(199, 67, 135, 0.12);
+  --bg: #fcf8fb;
+  --bg-strong: #f7f0f5;
+  --surface: rgba(255, 255, 255, 0.84);
+  --surface-strong: rgba(255, 255, 255, 0.92);
+  --text: #271c29;
+  --muted: #6e6270;
+  --line: rgba(39, 28, 41, 0.1);
+  --accent: #a44f79;
+  --accent-soft: #f6e9f0;
+  --gold: #9f6882;
+  --shadow: 0 12px 30px rgba(111, 74, 93, 0.08);
   --max-width: 1200px;
 }
 
@@ -24,10 +24,9 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(255, 174, 216, 0.42), transparent 28%),
-    radial-gradient(circle at 82% 10%, rgba(255, 127, 182, 0.24), transparent 22%),
-    radial-gradient(circle at 50% 100%, rgba(255, 214, 235, 0.65), transparent 28%),
-    linear-gradient(180deg, #fff9fc 0%, var(--bg) 100%);
+    radial-gradient(circle at top left, rgba(236, 192, 214, 0.26), transparent 30%),
+    radial-gradient(circle at 84% 10%, rgba(226, 176, 201, 0.18), transparent 22%),
+    linear-gradient(180deg, #fefbfd 0%, var(--bg) 100%);
   color: var(--text);
   font-family: "Inter", sans-serif;
 }
@@ -37,7 +36,7 @@ body {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.04;
+  opacity: 0.025;
   background-image:
     linear-gradient(rgba(42, 23, 48, 0.12) 1px, transparent 1px),
     linear-gradient(90deg, rgba(42, 23, 48, 0.12) 1px, transparent 1px);
@@ -64,7 +63,7 @@ main,
   align-items: center;
   justify-content: space-between;
   padding: 24px 0 18px;
-  background: rgba(255, 246, 251, 0.72);
+  background: rgba(252, 248, 251, 0.84);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(16px);
 }
@@ -183,7 +182,7 @@ main,
   background: var(--accent);
   border-color: var(--accent);
   color: #fff;
-  box-shadow: 0 10px 28px rgba(199, 67, 135, 0.18);
+  box-shadow: 0 8px 22px rgba(164, 79, 121, 0.14);
 }
 
 .button-secondary {
@@ -312,14 +311,14 @@ main,
   border: 1px solid var(--line);
   background: var(--surface);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(10px);
 }
 
 .research-card,
 .info-card {
   min-height: 0;
-  padding: 20px;
-  border-radius: 18px;
+  padding: 18px;
+  border-radius: 14px;
 }
 
 .research-card h3,
@@ -330,8 +329,8 @@ main,
 
 .highlight-panel,
 .students-panel {
-  padding: 24px;
-  border-radius: 18px;
+  padding: 22px;
+  border-radius: 14px;
 }
 
 .timeline {
@@ -469,8 +468,8 @@ main,
   display: grid;
   gap: 10px;
   min-height: 0;
-  padding: 18px;
-  border-radius: 18px;
+  padding: 16px;
+  border-radius: 14px;
 }
 
 .project-card strong {
@@ -489,8 +488,8 @@ main,
 .contact-grid a {
   display: grid;
   gap: 8px;
-  padding: 18px;
-  border-radius: 18px;
+  padding: 16px;
+  border-radius: 14px;
 }
 
 .contact-grid span {
@@ -511,10 +510,10 @@ main,
 
 .reveal {
   opacity: 0;
-  transform: translateY(22px);
+  transform: translateY(16px);
   transition:
-    opacity 700ms ease,
-    transform 700ms ease;
+    opacity 520ms ease,
+    transform 520ms ease;
 }
 
 .reveal.is-visible {

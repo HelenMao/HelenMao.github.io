@@ -1,15 +1,15 @@
 :root {
-  --bg: #fafafa;
-  --bg-strong: #f3f4f6;
-  --surface: #ffffff;
-  --surface-strong: #ffffff;
-  --text: #17202a;
-  --muted: #5f6b76;
-  --line: rgba(23, 32, 42, 0.12);
-  --accent: #184a8b;
-  --accent-soft: #edf3fb;
-  --gold: #6e5a2b;
-  --shadow: 0 2px 10px rgba(23, 32, 42, 0.04);
+  --bg: #fff6fb;
+  --bg-strong: #fff0f7;
+  --surface: rgba(255, 255, 255, 0.78);
+  --surface-strong: rgba(255, 255, 255, 0.9);
+  --text: #2a1730;
+  --muted: #725e79;
+  --line: rgba(42, 23, 48, 0.12);
+  --accent: #c74387;
+  --accent-soft: #ffe5f2;
+  --gold: #b86a8f;
+  --shadow: 0 16px 42px rgba(199, 67, 135, 0.12);
   --max-width: 1200px;
 }
 
@@ -23,13 +23,25 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at top left, rgba(255, 174, 216, 0.42), transparent 28%),
+    radial-gradient(circle at 82% 10%, rgba(255, 127, 182, 0.24), transparent 22%),
+    radial-gradient(circle at 50% 100%, rgba(255, 214, 235, 0.65), transparent 28%),
+    linear-gradient(180deg, #fff9fc 0%, var(--bg) 100%);
   color: var(--text);
   font-family: "Inter", sans-serif;
 }
 
 .grain {
-  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image:
+    linear-gradient(rgba(42, 23, 48, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42, 23, 48, 0.12) 1px, transparent 1px);
+  background-size: 34px 34px;
 }
 
 a {
@@ -45,14 +57,16 @@ main,
 }
 
 .site-header {
-  position: static;
+  position: sticky;
+  top: 0;
   z-index: 20;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 24px 0 18px;
-  background: transparent;
+  background: rgba(255, 246, 251, 0.72);
   border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(16px);
 }
 
 .brand {
@@ -90,10 +104,11 @@ main,
 }
 
 .hero {
+  min-height: calc(100svh - 96px);
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
   gap: 28px;
-  align-items: start;
+  align-items: center;
 }
 
 .eyebrow {
@@ -116,7 +131,7 @@ main,
 .hero h1 {
   max-width: 11ch;
   font-family: "Instrument Serif", serif;
-  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-size: clamp(3.1rem, 6.8vw, 5.4rem);
   font-weight: 400;
   letter-spacing: -0.04em;
 }
@@ -161,10 +176,11 @@ main,
   background: var(--accent);
   border-color: var(--accent);
   color: #fff;
+  box-shadow: 0 10px 28px rgba(199, 67, 135, 0.18);
 }
 
 .button-secondary {
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.62);
 }
 
 .meta-list,
@@ -185,24 +201,24 @@ main,
   padding: 10px 14px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.52);
+  background: rgba(255, 255, 255, 0.62);
   color: var(--muted);
   font-size: 0.92rem;
 }
 
 .hero-visual {
-  position: static;
-  min-height: auto;
+  position: relative;
+  min-height: 620px;
 }
 
 .portrait-frame {
-  position: static;
+  position: absolute;
+  inset: 0 0 64px 32px;
   overflow: hidden;
-  border-radius: 12px;
-  border: 1px solid rgba(21, 29, 28, 0.08);
+  border-radius: 22px;
+  border: 1px solid rgba(42, 23, 48, 0.08);
   box-shadow: var(--shadow);
   background: var(--bg-strong);
-  aspect-ratio: 4 / 5;
 }
 
 .portrait-frame img {
@@ -212,13 +228,15 @@ main,
 }
 
 .floating-card {
-  position: static;
-  width: 100%;
-  margin-top: 12px;
-  padding: 18px;
-  border: 1px solid rgba(21, 29, 28, 0.08);
-  border-radius: 12px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: min(84%, 420px);
+  padding: 20px;
+  border: 1px solid rgba(42, 23, 48, 0.08);
+  border-radius: 18px;
   background: var(--surface-strong);
+  backdrop-filter: blur(18px);
   box-shadow: var(--shadow);
 }
 
@@ -249,7 +267,7 @@ main,
 .section-heading h2,
 .highlight-panel h2,
 .students-panel h2 {
-  font-size: clamp(1.9rem, 4vw, 3.2rem);
+  font-size: clamp(1.95rem, 4.5vw, 3.4rem);
 }
 
 .intro-grid,
@@ -267,7 +285,7 @@ main,
 .lead {
   margin: 0;
   font-family: "Instrument Serif", serif;
-  font-size: clamp(1.55rem, 3vw, 2.3rem);
+  font-size: clamp(1.65rem, 3.4vw, 2.5rem);
   line-height: 1.2;
 }
 
@@ -304,13 +322,14 @@ main,
   border: 1px solid var(--line);
   background: var(--surface);
   box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
 }
 
 .research-card,
 .info-card {
   min-height: 0;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 18px;
 }
 
 .research-card h3,
@@ -322,7 +341,7 @@ main,
 .highlight-panel,
 .students-panel {
   padding: 24px;
-  border-radius: 10px;
+  border-radius: 18px;
 }
 
 .timeline {
@@ -353,7 +372,6 @@ main,
 
 .publication-item {
   grid-template-columns: minmax(0, 1fr) auto;
-  padding: 18px 0;
 }
 
 .publication-item h4 {
@@ -395,7 +413,7 @@ main,
   padding: 0 14px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.82);
   color: var(--muted);
   font: inherit;
   font-weight: 600;
@@ -431,7 +449,8 @@ main,
 .publication-item a,
 .students-list a,
 .project-card strong,
-.contact-grid strong {
+.contact-grid strong,
+.info-card a {
   color: var(--accent);
 }
 
@@ -461,7 +480,7 @@ main,
   gap: 10px;
   min-height: 0;
   padding: 18px;
-  border-radius: 10px;
+  border-radius: 18px;
 }
 
 .project-card strong {
@@ -481,7 +500,7 @@ main,
   display: grid;
   gap: 8px;
   padding: 18px;
-  border-radius: 10px;
+  border-radius: 18px;
 }
 
 .contact-grid span {
@@ -501,9 +520,16 @@ main,
 }
 
 .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+}
+
+.reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
-  transition: none;
 }
 
 .site-nav a:hover,
@@ -511,7 +537,7 @@ main,
 .contact-grid a:hover,
 .project-card:hover,
 .publication-item a:hover {
-  transform: none;
+  transform: translateY(-2px);
 }
 
 @media (max-width: 980px) {
@@ -527,11 +553,12 @@ main,
   }
 
   .hero {
+    min-height: auto;
     padding-top: 8px;
   }
 
   .hero-visual {
-    min-height: auto;
+    min-height: 520px;
   }
 
   .pub-links {
@@ -561,12 +588,19 @@ main,
     font-size: clamp(3rem, 17vw, 4.8rem);
   }
 
+  .hero-visual {
+    min-height: auto;
+  }
+
   .portrait-frame {
-    aspect-ratio: auto;
+    position: static;
+    aspect-ratio: 4 / 5;
   }
 
   .floating-card {
+    position: static;
     width: 100%;
+    margin-top: 14px;
   }
 
   .button {

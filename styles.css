@@ -106,8 +106,8 @@ main,
 .hero {
   min-height: calc(100svh - 96px);
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-  gap: 28px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  gap: 34px;
   align-items: center;
 }
 
@@ -149,9 +149,16 @@ main,
 }
 
 .hero-text {
-  max-width: 38rem;
+  max-width: 42rem;
   margin: 22px 0 0;
   font-size: 1.06rem;
+}
+
+.hero-note {
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.7;
 }
 
 .hero-actions {
@@ -183,27 +190,10 @@ main,
   background: rgba(255, 255, 255, 0.62);
 }
 
-.meta-list,
 .students-list {
   padding: 0;
   margin: 0;
   list-style: none;
-}
-
-.meta-list {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 26px;
-}
-
-.meta-list li {
-  padding: 10px 14px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.62);
-  color: var(--muted);
-  font-size: 0.92rem;
 }
 
 .hero-visual {
@@ -213,9 +203,9 @@ main,
 
 .portrait-frame {
   position: absolute;
-  inset: 0 0 64px 32px;
+  inset: 0;
   overflow: hidden;
-  border-radius: 22px;
+  border-radius: 14px;
   border: 1px solid rgba(42, 23, 48, 0.08);
   box-shadow: var(--shadow);
   background: var(--bg-strong);
@@ -229,12 +219,12 @@ main,
 
 .floating-card {
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: min(84%, 420px);
-  padding: 20px;
+  right: 18px;
+  bottom: 18px;
+  width: min(78%, 340px);
+  padding: 16px;
   border: 1px solid rgba(42, 23, 48, 0.08);
-  border-radius: 18px;
+  border-radius: 12px;
   background: var(--surface-strong);
   backdrop-filter: blur(18px);
   box-shadow: var(--shadow);
@@ -254,8 +244,8 @@ main,
 
 .floating-card h2 {
   margin: 0;
-  font-size: clamp(1.45rem, 3vw, 2.1rem);
-  line-height: 1.1;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  line-height: 1.35;
 }
 
 .section-heading {
